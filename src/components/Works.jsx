@@ -6,7 +6,7 @@ import { SectionWrapper } from "../hoc";
 import { github } from "../assets";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motions";
-
+import { AiOutlineGlobal } from "react-icons/ai";
 const ProjectCard = ({
   index,
   name,
@@ -14,6 +14,7 @@ const ProjectCard = ({
   description,
   image,
   source_code_link,
+  production_link
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -32,6 +33,12 @@ const ProjectCard = ({
             className="w-full h-full object-contain rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+            {production_link&& (<div
+              onClick={() => window.open(production_link, "_blank")}
+              className="black-gradient rounded-full flex items-center justify-center cursor-pointer mr-2 w-10 h-10"
+            >
+              <AiOutlineGlobal className="w-1/2 h-1/3 object-contain" />
+            </div>)}
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="black-gradient rounded-full flex items-center justify-center cursor-pointer w-10 h-10"

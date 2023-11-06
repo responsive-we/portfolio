@@ -4,14 +4,27 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motions";
 import { testimonials } from "../constants";
+import {AiOutlineGithub,AiOutlineLinkedin,AiOutlineInstagram} from 'react-icons/ai'
 const FeedbackCard = ({
   index,
-  testimonial,
-  designation,
+  text,
+  link,
   company,
-  image,
-  name,
-}) => (
+  user_name,
+}) => {
+  const loadIcons = () => {
+    const classVar="cursor-pointer"
+    if(company === 'Github'){
+      return <AiOutlineGithub size={30} className={classVar} onClick={()=>window.open(link,"_blank")}/>
+    }
+    else if(company === 'Linkedin'){
+      return <AiOutlineLinkedin size={30} className={classVar}  onClick={()=>window.open(link,"_blank")} />
+    }
+    else if(company === 'Instagram'){
+      return <AiOutlineInstagram size={30} className={classVar}  onClick={()=>window.open(link,"_blank")}/>
+    }
+  }
+  return (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className="
@@ -19,22 +32,22 @@ const FeedbackCard = ({
   >
     <p className="text-white font-black text-[48px]">&#34;</p>
     <div className="mt-1">
-      <p className="text-white leading-wider text-[18px]">{testimonial}</p>
+      <p className="text-white leading-wider text-[18px]">{text}</p>
       <div className="mt-7 flex justify-between items-center gap-1">
         <div className="flex-1 flex flex-col">
           <p className="text-white font-medium text-[16px]">
             <span className="blue-text-gradient">&#64;</span>
-            {name}
+            {user_name}
           </p>
           <p className="mt-1 text-secondary text-[12px]">
-            {designation} at {company}
+            on {company}
           </p>
         </div>
-        <img src={image} alt={`testimonial by ${name}`} className="h-10 w-10 rounded-full object-cover" />
+        {loadIcons()}
       </div>
     </div>
   </motion.div>
-);
+)}
 const Feedbacks = () => {
   return (
     <div className="mt-12 bg-black-100 rounded-[20px]">
@@ -42,13 +55,13 @@ const Feedbacks = () => {
         className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}
       >
         <motion.div variants={textVariant()}>
-          <p className={`${styles.sectionSubText}`}>What Others Say</p>
-          <h2 className={`${styles.sectionHeadText}`}>Testimonials.</h2>
+          <p className={`${styles.sectionSubText}`}>Connect With Me</p>
+          <h2 className={`${styles.sectionHeadText}`}>Social Media handles.</h2>
         </motion.div>
       </div>
       <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
         {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+          <FeedbackCard key={testimonial.user_name} index={index} {...testimonial} />
         ))}
       </div>
     </div>

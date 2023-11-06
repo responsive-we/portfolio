@@ -42,6 +42,16 @@
     rgba(60, 51, 80, 0) 100%
   );
 }
+.violet-gradient-text {
+  background: rgb(77, 229, 238);
+  background: linear-gradient(
+    -90deg,
+    rgba(77, 229, 238, 1) 13%,
+    rgba(128, 77, 238, 1) 55%
+  );
+  background-clip: text;
+  color: transparent;
+}
 
 .green-pink-gradient {
   background: "#00cea8";
