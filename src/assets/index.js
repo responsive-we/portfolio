@@ -1,31 +1,38 @@
 import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
 
+// Importing services icons
+import backend from "./services_icons/backend.png";
+import creator from "./services_icons/creator.png";
+import mobile from "./services_icons/mobile.png";
+import web from "./services_icons/web.png";
+
+// Importing utilities icons
+import github from "./utils_icons/github.png";
+import menu from "./utils_icons/menu.svg";
+import close from "./utils_icons/close.svg";
+import ibm from "./utils_icons/ibm.jpg";
+
+// Importing tech icons
 import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import ibm from "./ibm.jpg";
+// Importing projects images
+import kharido from "./projects/kharido.jpg";
+import monkey_news from "./projects/monkey_news.jpg";
+import chata_chat from "./projects/chata_chat.jpg";
 
-import kharido from "./kharido.jpg";
-import monkey_news from "./monkey_news.jpg";
-import chata_chat from "./chata_chat.jpg";
+// Importing certificates
+import node_course from "./certificates/node_course.jpg";
+import react_course from "./certificates/react_course.jpg";
+import github_course from "./certificates/github_course.jpg";
+import html_css_js_course from "./certificates/html_css_js_course.jpg";
 
 export {
   logo,
@@ -37,20 +44,20 @@ export {
   menu,
   close,
   css,
-  docker,
-  figma,
   git,
   html,
   javascript,
   mongodb,
   nodejs,
   reactjs,
-  redux,
   tailwind,
-  typescript,
   threejs,
   ibm,
   kharido,
   monkey_news,
-  chata_chat
+  chata_chat,
+  node_course,
+  react_course,
+  github_course,
+  html_css_js_course,
 };

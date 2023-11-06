@@ -6,34 +6,34 @@ import {
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
-import { experiences } from "../constants";
+import { certificates } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motions";
 
-const ExperienceCard = ({ experience }) => {
+const CertificationCard = ({ certificate }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{ backgroundColor: "#1d1836", color: "#fff" }}
       contentArrowStyle={{ borderRight: "7px solid #232631" }}
-      date={experience.date}
-      iconStyle={{background: experience.iconBg}}
+      date={certificate.date}
+      iconStyle={{background: certificate.iconBg}}
       icon={<div className="w-full h-full flex justify-center items-center rounded-full border-2 border-primary ">
-        <img src={experience.icon} alt={experience.company_name} className="w-[60%] h-[60%] object-contain" />
+        <img src={certificate.icon} alt={certificate.company_name} className="w-[60%] h-[60%] object-contain" />
       </div>}
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <h3 className="text-white text-[24px] font-bold">{certificate.title}</h3>
       </div>
       <ul className="mt-5 list-disc ml-5 space-y-2 ">
-        <img src={experience.img} alt={experience.name} className="cursor-pointer" onClick={()=>{
-          window.open(experience.link, "_blank")
+        <img src={certificate.img} alt={certificate.name} className="cursor-pointer" onClick={()=>{
+          window.open(certificate.link, "_blank")
         }} />
       </ul>
     </VerticalTimelineElement>
   );
 };
 
-const Experience = () => {
+const Certifications = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -42,8 +42,8 @@ const Experience = () => {
       </motion.div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
+          {certificates.map((certificate, index) => (
+            <CertificationCard key={index} certificate={certificate} />
           ))}
         </VerticalTimeline>
         <h3 className={`${styles.sectionHeadText} text-center violet-gradient-text`}>View more of my Certifications on my <span onClick={()=>window.open("https://www.linkedin.com/in/mohammad-ayan-184624258/","_blank")} className=" cursor-pointer hover:underline hover:decoration-purple-800 ">Linkedin.</span></h3>
@@ -52,4 +52,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "experience");
+export default SectionWrapper(Certifications, "certifications");

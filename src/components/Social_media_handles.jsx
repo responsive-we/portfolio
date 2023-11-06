@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motions";
-import { testimonials } from "../constants";
+import { social_media_handles } from "../constants";
 import {AiOutlineGithub,AiOutlineLinkedin,AiOutlineInstagram} from 'react-icons/ai'
-const FeedbackCard = ({
+const Social_media_handleCard = ({
   index,
   text,
   link,
@@ -48,7 +48,7 @@ const FeedbackCard = ({
     </div>
   </motion.div>
 )}
-const Feedbacks = () => {
+const Social_media_handles = () => {
   return (
     <div className="mt-12 bg-black-100 rounded-[20px]">
       <div
@@ -60,12 +60,12 @@ const Feedbacks = () => {
         </motion.div>
       </div>
       <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.user_name} index={index} {...testimonial} />
+        {social_media_handles.map((social_media_handle, index) => (
+          <Social_media_handleCard key={social_media_handle.user_name} index={index} {...social_media_handle} />
         ))}
       </div>
     </div>
   );
 };
 
-export default SectionWrapper(Feedbacks, "");
+export default SectionWrapper(Social_media_handles, "social_media_handles");

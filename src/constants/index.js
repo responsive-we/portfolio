@@ -15,22 +15,29 @@ import {
   threejs,
   kharido,
   monkey_news,
-  chata_chat
-} from "../assets";
-import {
+  chata_chat,
   node_course,
   react_course,
   github_course,
   html_css_js_course,
-} from "../assets/certificates/";
+} from "../assets";
+
 export const navLinks = [
   {
     id: "about",
     title: "About",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "certifications",
+    title: "Certifications",
+  },
+  {
+    id: "projects",
+    title: "Projects",
+  },
+  {
+    id:"social_media_handles",
+    title:"Connect with me"
   },
   {
     id: "contact",
@@ -96,7 +103,7 @@ const technologies = [
   },
 ];
 
-const experiences = [
+const certificates = [
   {
     title: "Developing Back-End Apps with Node.js and Express",
     icon: ibm,
@@ -134,7 +141,7 @@ const experiences = [
   },
 ];
 
-const testimonials = [
+const social_media_handles = [
   {
     text: "This is my Linekdin profile. You can check it out to know more about me. And if you want to connect with me, you can send me a request.",
     user_name: "Mohammad Ayan",
@@ -223,4 +230,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, certificates, social_media_handles, projects };
