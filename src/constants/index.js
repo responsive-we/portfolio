@@ -12,7 +12,6 @@ import {
   mongodb,
   git,
   ibm,
-  threejs,
   kharido,
   monkey_news,
   chata_chat,
@@ -92,10 +91,6 @@ const technologies = [
   {
     name: "MongoDB",
     icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
   },
   {
     name: "git",
